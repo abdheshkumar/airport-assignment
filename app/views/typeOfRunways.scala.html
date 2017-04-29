@@ -1,0 +1,20 @@
+@(cRunways: Vector[(String, String)])
+<div class="col-sm-6">
+    <div class="alert-success text-center font16">Type of runways per country </div>
+    <table class="table table-bordered">
+        <thead class="thead-inverse">
+            <tr>
+                <th>Country Name</th>
+                <th>Type of runways</th>
+            </tr>
+        </thead>
+        <tbody>
+            @cRunways.map { case (countryName, typeOfRunways) =>
+            <tr>
+                <td>@countryName</td>
+                <td>@typeOfRunways</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

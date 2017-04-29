@@ -1,0 +1,16 @@
+@import module.QueryResult
+@(queryResult: QueryResult)
+<div class="col-12">
+    <ul class="list-group">
+        @queryResult.airports.map { case (airport, runways) =>
+        <li class="list-group-item list-group-item-success">
+            <div class="font16">@airport.name</div>
+        <ul>
+            @runways.map { runway =>
+                <li><div>@runway.surface</div></li>
+            }
+        </ul>
+            </li>
+        }
+    </ul>
+</div>

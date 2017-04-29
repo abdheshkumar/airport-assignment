@@ -1,0 +1,40 @@
+@import module.CountryCount
+@(result: (List[CountryCount], List[CountryCount]))
+<div class="col-sm-6">
+    <div class="alert-success text-center font16">10 countries with highest number of airport</div>
+    <table class="table table-bordered">
+        <thead class="thead-inverse">
+            <tr>
+                <th>Country Name</th>
+                <th>Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            @result._1.map { result =>
+                <tr>
+                    <td>@result.country.name</td>
+                    <td>@result.count</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div class="col-sm-6">
+    <div class="alert-success text-center font16">10 countries with lowest number of airport</div>
+    <table class="table table-bordered">
+        <thead class="thead-inverse">
+            <tr>
+                <th>Country Name</th>
+                <th>Count</th>
+            </tr>
+        </thead>
+        <tbody>
+        @result._2.map { result =>
+            <tr>
+                <td>@result.country.name</td>
+                <td>@result.count</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

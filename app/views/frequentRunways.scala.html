@@ -1,0 +1,20 @@
+@(frequentRunways: List[(String, Int)])
+<div class="col-sm-6">
+    <div class="alert-success text-center font16 text-center">Frequent Runways </div>
+    <table class="table table-bordered">
+        <thead class="thead-inverse">
+            <tr>
+                <th>Type of runway identifications</th>
+                <th>Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            @frequentRunways.map { case (typeOfRunways, count) =>
+            <tr>
+                <td>@typeOfRunways</td>
+                <td>@count</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
